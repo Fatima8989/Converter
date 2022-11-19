@@ -27,10 +27,11 @@ body {
     font-weight: 500;
  }
 
- li{ 
+li{ 
     padding: 8px;
     border-radius: 3px;
     margin-right: 10px;
+    cursor: pointer;
 }
   
 li:hover{
@@ -51,4 +52,68 @@ li:hover{
     align-items: center;
     font-size: 12px;
     cursor: pointer;
+}
+
+.currency-converter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 120px;
+}
+
+body h1{
+    margin: 56px 0px -5px 250px;
+    width: 587px;
+}
+.currency-form{
+    width: 258px;
+    padding: 0px 10px;
+    background: white;
+}
+
+.currency-converter .currency-form input{
+    width: 167px;
+    outline: none;
+    font-weight: 400;
+    font-size: 36px;
+}
+.txt{
+    color:black;
+    font-size: 12px;
+    color: #9F9F9F;
+}
+
+.btn-group {
+    height: 30px;
+}
+
+.input {
+    box-shadow: 0px 5px 10px gray;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    margin-top: 30px;
+}
+
+input {
+    border: none; 
+}
+
+.btn-group button {
+    background-color: white; 
+    border: 1px solid #E5E5E5; 
+    color: #E5E5E5; 
+    width: 64px;
+    height: 28px;
+    cursor: pointer; 
+    float: left; 
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none;
+}
+
+.btn-group button:hover, button:focus{
+   background-color:#833AE0;
 }
