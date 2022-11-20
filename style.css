@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-/* @media only screen and (max-width:) {  */
+@media screen and (min-width: 1024px) {
 body {
     font-family: 'Roboto';
 }
 
 .header{
-    width: 1160px;
+    width: 1150;
     height: 50px;
-    margin-left: -7px;
-    margin-top: -7px;
+    margin: -8px;
     background: #F5F5F6;
 }
 
@@ -21,7 +20,7 @@ body {
 .line ul {
     list-style-type: none;
     display: flex;
-    margin: -28px 0px 0px 223px;
+    margin: -28px 0px 0px 215px;
     font-size: 12px;
     color: gray;
     font-weight: 500;
@@ -37,6 +36,9 @@ li{
 li:hover{
     color: black;
     transition: 0,2s;
+}
+.bank{
+    color:black;
 }
 
 .login{
@@ -56,15 +58,14 @@ li:hover{
 
 .currency-converter{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 50px;
+    margin-left: 243px;
     display: flex;
     gap: 120px;
 }
 
 body h1{
-    margin: 56px 0px -5px 250px;
+    margin: 80px 0px -5px 254px;
     width: 587px;
 }
 .currency-form{
@@ -81,8 +82,9 @@ body h1{
 }
 .txt{
     color:black;
-    font-size: 12px;
+    font-size: 13px;
     color: #9F9F9F;
+    margin-top: -10px;
 }
 
 .btn-group {
@@ -94,6 +96,9 @@ body h1{
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     margin-top: 30px;
+    height: 102px;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
 }
 
 input {
@@ -116,4 +121,260 @@ input {
 
 .btn-group button:hover, button:focus{
    background-color:#833AE0;
+}
+}
+
+@media screen and (min-width: 651px) and (max-width: 1023px) { 
+body {
+    font-family: 'Roboto';
+}
+.header{
+    width: 1150;
+    height: 60px;
+    margin: -8px;
+    background: #F5F5F6;
+}
+
+.header img{
+    margin-left: 80px;
+    margin-top: 15px;
+}
+
+.line ul {
+    list-style-type: none;
+    display: flex;
+    margin: -24px 0px 0px 192px;
+    font-size: 14px;
+    color: gray;
+    font-weight: 500;
+ }
+
+li{ 
+    padding: 8px;
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+  
+li:hover{
+    color: black;
+    transition: 0,2s;
+}
+.bank{
+    color:black;
+}
+
+.login{
+    width: 58px;
+    height: 33px;
+    margin: -33px 102px 0px 1020px ;
+    border-radius: 4px;
+    background-color: white;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.currency-converter{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 225px;
+    display: flex;
+    gap: 100px;
+}
+
+body h1{
+    margin: 100px 0px -5px 230px;
+    width: 587px;
+    font-size: 36px;
+}
+.currency-form{
+    width: 300px;
+    padding: 0px 10px;
+    background: white;
+}
+
+.currency-converter .currency-form input{
+    width: 180px;
+    outline: none;
+    font-weight: 400;
+    font-size: 36px;
+}
+.txt{
+    color:black;
+    font-size: 16px;
+    color: #9F9F9F;
+    margin-top: -5px;
+}
+
+.btn-group {
+    height: 30px;
+}
+
+.input {
+    box-shadow: 0px 5px 10px gray;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    margin-top: 30px;
+    height: 120px;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+}
+
+input {
+    border: none; 
+}
+
+.btn-group button {
+    background-color: white; 
+    border: 1px solid #E5E5E5; 
+    color: #E5E5E5; 
+    width: 75px;
+    height: 35px;
+    cursor: pointer; 
+    float: left; 
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none;
+}
+
+.btn-group button:hover, button:focus{
+   background-color:#833AE0;
+}
+}
+
+@media screen and (max-width: 650px) {
+body {
+    font-family: 'Roboto';
+}
+
+.header{
+    width: 1023px;
+    height: 35px;
+    margin: -8px;
+    background: #F5F5F6;
+}
+
+.header img{
+    margin-left: 80px;
+    margin-top: 10px;
+    width: 70px;
+    height: 18px;
+    
+}
+
+.line ul {
+    list-style-type: none;
+    display: flex;
+    margin: -20px 0px 0px 190px;
+    font-size: 10px;
+    color: gray;
+    font-weight: 420;
+ }
+
+li{ 
+    padding: 6px;
+    border-radius: 3px;
+    margin-right: 7px;
+    cursor: pointer;
+}
+  
+li:hover{
+    color: black;
+    transition: 0,2s;
+}
+.bank{
+    color:black;
+}
+
+.login{
+    width: 40px;
+    height: 20px;
+    margin: -22px 0px 0px 870px ;
+    border-radius: 4px;
+    background-color: white;
+    font-weight: 420;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.currency-converter{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 220px;
+    /* display: flex;
+    flex-direction: column-reverse; */
+    gap: 80px;
+
+    
+}
+
+body h1{
+    margin: 56px 0px -5px 220px;
+    width: 400px;
+    font-size: 28px;
+}
+.currency-form{
+    width: 190px;
+    padding: 0px 8px;
+    background: white;
+}
+
+.currency-converter .currency-form input{
+    width: 120px;
+    outline: none;
+    font-weight: 300;
+    font-size: 28px;
+}
+.txt{
+    color:black;
+    font-size: 10px;
+    color: #9F9F9F;
+}
+
+.btn-group {
+    height: 25px;
+    width: 200px;
+}
+
+.input {
+    box-shadow: 0px 5px 10px gray;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    margin-top: 30px;
+    width: 200px;
+    height: 70px;
+}
+
+input {
+    border: none; 
+}
+
+.btn-group button {
+    background-color: white; 
+    border: 1px solid #E5E5E5; 
+    color: #E5E5E5; 
+    width: 50px;
+    height: 28px;
+    cursor: pointer; 
+    float: left; 
+    font-size: 10px;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none;
+}
+
+.btn-group button:hover, button:focus{
+   background-color:#833AE0;
+}
 }

@@ -195,3 +195,41 @@ fromInput.addEventListener("input",(e)=>{
     }
     toInput.value=Math.trunc((1/rate*v*100))/100;
 });
+
+function getExchange(){
+    let v1=fromSelect.value;
+    let v2=toSelect.value;
+    fetch('https://api.exchangerate.host/latest/convert?to=${v2}&from=&{v1}&amount=1',{
+        method: "GET",
+        // headers: {
+        //     "apikey":"...."
+
+        // }
+    }).then((v)=>{
+       return v.json(); 
+    }).then((res)=>{
+        rate=res.info.rate;
+        let v=fromInput.value.trim(v);
+        if(v !== ""){
+            v=parseFloat(v);
+        }
+        
+        else{
+        v=1;
+        }
+        toInput.value=rate*v;
+    });
+}
+
+btn-group.addEventListener('click', () => {
+    const temp = fromInput.value;
+    fromInput.value = fromSelect.value;
+    fromSelect.value = temp;
+    getExchange();
+});
+
+fromSelect.addEventListener("change", getExchange);
+toSelect.addEventListener("change", getExchange);
+getExchange();
+
+
