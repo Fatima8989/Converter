@@ -231,5 +231,3 @@ btn-group.addEventListener('click', () => {
 fromSelect.addEventListener("change", getExchange);
 toSelect.addEventListener("change", getExchange);
 getExchange();
-
-
