@@ -178,8 +178,8 @@ const swap = document.getElementById('btn-group ');
 
 let rate=0;
 
-let optionsHTML=Object.entries(symbols).reduce((a,e)=>{
-    return a + '<option value= "${e[0]}">${e[1]}</option>';
+let optionsHTML=Object.entries(symbols).reduce((asc,e)=>{
+    return asc + '<option value= "${e[0]}">${e[1]}</option>';
 },"");
 
 fromSelect.innerHTML=optionsHTML;
@@ -201,10 +201,10 @@ function getExchange(){
     let v2=toSelect.value;
     fetch('https://api.exchangerate.host/latest/convert?to=${v2}&from=&{v1}&amount=1',{
         method: "GET",
-        // headers: {
-        //     "apikey":"...."
+        headers: {
+            "apikey":""
 
-        // }
+        }
     }).then((v)=>{
        return v.json(); 
     }).then((res)=>{
@@ -231,3 +231,5 @@ btn-group.addEventListener('click', () => {
 fromSelect.addEventListener("change", getExchange);
 toSelect.addEventListener("change", getExchange);
 getExchange();
+
+

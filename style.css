@@ -118,13 +118,13 @@ input {
 }
 }
 
-@media screen and (min-width: 557px) and (max-width: 1023px) { 
+@media screen and (min-width: 464px) and (max-width: 1023px) { 
 body {
     font-family: 'Roboto';
 }
 .header{
     width: 1150;
-    height: 70px;
+    height: 80px;
     margin: -8px;
     background: #F5F5F6;
 }
@@ -140,13 +140,13 @@ body {
 .line ul {
     list-style-type: none;
     display: flex;
-    margin: -35px 0px 0px 192px;
-    font-size: 15px;
+    margin: -30px 0px 0px 194px;
+    font-size: 16px;
     color: gray;
     font-weight: 500;
 }
 li{ 
-    padding: 6px;
+    padding: 5px;
     border-radius: 3px;
     margin-right: 10px;
     cursor: pointer;
@@ -164,7 +164,7 @@ li:hover{
 .login{
     width: 78px;
     height: 40px;
-    margin: -35px 102px 0px 1020px ;
+    margin: -35px 102px 0px 1021px ;
     border-radius: 4px;
     background-color: white;
     font-weight: 500;
@@ -184,8 +184,8 @@ li:hover{
 }
 body h1{
     margin: 100px 0px -5px 140px;
-    width: 587px;
-    font-size: 45px;
+    width: 700px;
+    font-size: 50px;
 }
 .currency-form{
     width: 380px;
@@ -194,28 +194,29 @@ body h1{
     height: 170px;
 }
 .currency-converter .currency-form input{
-    width: 180px;
+    width: 250px;
     outline: none;
     font-weight: 400;
     font-size: 36px;
 }
 .txt{
     color:black;
-    font-size: 18px;
+    font-size: 21px;
     color: #9F9F9F;
     margin-top: 15px;
 }
 .btn-group {
-    height: 30px;
+    height: 55px;
 }
 .input {
     box-shadow: 0px 5px 10px gray;
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     margin-top: 30px;
-    height: 120px;
+    height: 140px;
     border: 1px solid #E5E5E5;
     border-radius: 3px;
+    font-weight: 350px;
 }
 input {
     border: none; 
@@ -225,10 +226,10 @@ input {
     border: 1px solid #E5E5E5; 
     color: #E5E5E5; 
     width: 95px;
-    height: 42px;
+    height: 50px;
     cursor: pointer; 
     float: left; 
-    font-size: 19px;
+    font-size: 20px;
 }
 .btn-group button:not(:last-child) {
     border-right: none;
@@ -239,7 +240,7 @@ input {
 }
 }
 
-@media screen and (max-width: 556px) {
+@media screen and (max-width: 463px) {
 body {
     font-family: 'Roboto';
 }
@@ -277,11 +278,13 @@ body {
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 10px 16px 0px black;
+    min-width: 100px;
+    box-shadow: 0px 5px 8px 0px black;
+    margin-left: 700px;
     border-radius: 4px;
 }
 .list a {
+    height: 17px;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
