@@ -23,6 +23,16 @@ function changeSelectedButton(event){
     else rightCurrency = event.target.innerHTML
 
 
+for(let i = 0; i < 4; i++){
+    if(event.target != event.target.parentElement.children[i]){
+        event.target.parentElement.children[i].style.backgroundColor = 'white';
+        event.target.parentElement.children[i].style.color = '#9F9F9F';
+    }
+}
+    changeCurrencies();
+}
+
+
 leftInput.addEventListener("input",(e)=>{
     let v=1;
     if(e.target.value.trim() !==""){
@@ -54,4 +64,3 @@ async function getExchange(){
 
 leftInput.addEventListener("change", getExchange);
 rightInput.addEventListener("change", getExchange);
-getExchange();
