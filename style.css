@@ -110,12 +110,8 @@ input {
     float: left; 
     font-size: 14px;
 }
-.btn-group button:not(:last-child) {
-    border-right: none;
-}
-.btn-group button:hover, button:focus{
-   background-color:#833AE0;
-}
+
+
 }
 
 @media screen and (min-width: 464px) and (max-width: 1023px) { 
@@ -231,13 +227,7 @@ input {
     float: left; 
     font-size: 20px;
 }
-.btn-group button:not(:last-child) {
-    border-right: none;
-}
 
-.btn-group button:hover, button:focus{
-   background-color:#833AE0;
-}
 }
 
 @media screen and (max-width: 463px) {
@@ -371,10 +361,6 @@ input {
     float: left; 
     font-size: 30px;
 }
-.btn-group button:not(:last-child) {
-    border-right: none;
-}
-.btn-group button:hover, button:focus{
-   background-color:#833AE0;
-}
+
+
 }

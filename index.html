@@ -1,70 +1,78 @@
 <DOCTYPE html>
-<html lang="en">        
-    <head>
-        <meta charset="UTF-8">
-        <title>Converter</title>
-        <link rel="stylesheet" href="/style.css">
-        <script src="script.js" defer></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <div class="header">
-        <img src="images/bank.svg">
-            <div class="line">
-            <ul>
-                <li class="bank">БАНК</li>
-                <li>БИЗНЕС</li>
-                <li>ИНВЕСТИЦИИ</li>
-                <li>СТРАХОВАНИЕ</li>
-                <li>МОБАЙЛ</li>
-                <li>ПУТИШЕСТВИЯ</li>
-                <li>РАЗВЛЕЧЕНИЯ</li>
-            </ul>
-            </div>
-            <div class="login">ВОЙТИ</div> 
-        </div>
-
-        <div class="box">
-            <button class="button">MENU</button>
-            <div class="list">
-              <a href="#">БАНК</a>
-              <a href="#">БИЗНЕС</a>
-              <a href="#">ИНВЕСТИЦИИ</a>
-              <a href="#">СТРАХОВАНИЕ</a>
-              <a href="#">МОБАЙЛ</a>
-              <a href="#">ПУТИШЕСТВИЯ</a>
-              <a href="#">РАЗВЛЕЧЕНИЯ</a>
-            </div>
-        </div>
-        <div class="login2">ВОЙТИ</div> 
-          
-        <h1>Конвертер валют онлайн</h1>
-        <div class="currency-converter">
-            <div class="currency-form currency-from">
-                <p class="txt">У меня есть</p>
-                <div class="btn-group">
-                <button><option>RUB</option></button>
-                <button><option>USD</option></button>
-                <button><option>AZN</option></button>
-                <button><option>GBP</option></button>
+    <html lang="en">        
+        <head>
+            <meta charset="UTF-8">
+            <title>Converter</title>
+            <link rel="stylesheet" href="/style.css">
+            <script src="script.js" defer></script>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+        <body>
+            <div class="header">
+            <img src="images/bank.svg">
+                <div class="line">
+                <ul>
+                    <li class="bank">БАНК</li>
+                    <li>БИЗНЕС</li>
+                    <li>ИНВЕСТИЦИИ</li>
+                    <li>СТРАХОВАНИЕ</li>
+                    <li>МОБАЙЛ</li>
+                    <li>ПУТИШЕСТВИЯ</li>
+                    <li>РАЗВЛЕЧЕНИЯ</li>
+                </ul>
                 </div>
-                <div class="input">
-                    <input  type="text" value="" placeholder="0">
+                <div class="login">ВОЙТИ</div> 
+            </div>
+    
+            <div class="box">
+                <button class="button">MENU</button>
+                <div class="list">
+                  <a href="#">БАНК</a>
+                  <a href="#">БИЗНЕС</a>
+                  <a href="#">ИНВЕСТИЦИИ</a>
+                  <a href="#">СТРАХОВАНИЕ</a>
+                  <a href="#">МОБАЙЛ</a>
+                  <a href="#">ПУТИШЕСТВИЯ</a>
+                  <a href="#">РАЗВЛЕЧЕНИЯ</a>
                 </div>
             </div>
-
-            <div class="currency-form currency-to">
-                <p class="txt">Хочу приобрести</p>
-                <div class="btn-group">
-                <button><option>RUB</option></button>
-                <button><option>USD</option></button>
-                <button><option>AZN</option></button>
-                <button><option>GBP</option></button>
+            <div class="login2">ВОЙТИ</div> 
+              
+            <h1>Конвертер валют онлайн</h1>
+            <div class="currency-converter">
+                <div class="currency-form currency-from">
+                    <p class="txt">У меня есть</p>
+                    <div class="btn-group">
+                        <div class="exchange1">
+                            <button class="one-button">RUB</button>
+                            <button class="one-button">USD</button>
+                            <button class="one-button">AZN</button>
+                            <button class="one-button">GBP</button>
+                        </div>
+                    </div>
+    
+                    <div class="input">
+                        <input class="from" maxlength="25" type="text" oninput="this.value = this.value.replace(/^\./g, '').replace(/^\,/g, '').replace(/[^0-9.,]/g, '').replace(/,/g, '.').replace(/(\..*)\./g, '$1').replace(/^0+/g,'0').replace(/(\..*)0{4}$/g, '$1').replace(/(\.\d{4}).*/g, '$1');">
+                        <p class="from1"></p>
+                    </div>
                 </div>
-                <div class="input">
-                    <input  type="text" value="" placeholder="0">
+    
+                <div class="currency-form currency-to">
+                    <p class="txt">Хочу приобрести</p>
+                    <div class="btn-group">
+                        <div class="exchange2">
+                            <button class="two-button">RUB</button>
+                            <button class="two-button">USD</button>
+                            <button class="two-button">AZN</button>
+                            <button class="two-button">GBP</button>
+                        </div>
+                    </div>
+    
+                    <div class="input">
+                        <input class="to" maxlength="25" type="text"oninput="this.value = this.value.replace(/^\./g, '').replace(/^\,/g, '').replace(/[^0-9.,]/g, '').replace(/,/g, '.').replace(/(\..*)\./g, '$1').replace(/^0+/g,'0').replace(/(\..*)0{4}$/g, '$1').replace(/(\.\d{4}).*/g, '$1');">
+                        <p class="to1"></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+        </body>
+    </html>
