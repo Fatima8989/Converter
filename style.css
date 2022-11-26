@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+.one-button:nth-child(1){
+    background-color: #833AE0;
+    color: white;
+}
+
+.two-button:nth-child(2)
+{
+    background-color: #833AE0;
+    color: white;
+}
+
 @media screen and (min-width: 1024px) {
 body {
     font-family: 'Roboto';

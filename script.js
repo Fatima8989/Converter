@@ -41,26 +41,14 @@ leftInput.addEventListener("input",(e)=>{
     rightInput.value=Math.trunc((1/rate*v*100))/100;
 });
 
-convert()
-from.addEventListener('keyup',getExchange)
-async function getExchange(){
-    let v1 = leftCurrencyButtons.value;
-    let v2 = rightCurrencyButtons.value;
-    fetch(`https://api.exchangerate.host/base=${v1}&symbols=${v2}`)
-    .then((v)=>{
-       return v.json(); 
-    })
-    .then((res)=>{
-        rate=res.info.rate;
-        let v=leftCurrencyButtons.value.trim(v);
-        if(v !== ""){
-            v=parseFloat(v);
-        }
-        else{v=1;
-        }
-        leftCurrencyButtons.value=rate*v;
+async function changeCurrencies(){
+    var getThis = `https://api.exchangerate.host/convert?from=${leftCurrency}&to=${rightCurrency}`;
+    await fetch(getThis).then(response => response.json()).then((currency) => 
+    {
+        leftCurrencyInfo.innerHTML = 1 ${leftCurrency} = ${parseFloat(currency.info.rate.toFixed(4))} ${rightCurrency};
+        rightCurrencyInfo.innerHTML = 1 ${rightCurrency} = ${parseFloat((1 / currency.info.rate).toFixed(4))} ${leftCurrency};            
+        liveCurrencyRate = currency.info.rate; 
     });
 }
-
 leftInput.addEventListener("change", getExchange);
 rightInput.addEventListener("change", getExchange);
