@@ -4,7 +4,6 @@ const leftInput = document.querySelector('.from');
 const rightInput = document.querySelector('.to');
 const leftCurrencyInfo = document.querySelector('.from1');
 const rightCurrencyInfo = document.querySelector('.to1');
-let rate=0;
 
 let liveCurrencyRate;
 let leftCurrency = 'RUB';
@@ -32,15 +31,6 @@ for(let i = 0; i < 4; i++){
     changeCurrencies();
 }
 
-
-leftInput.addEventListener("input",(e)=>{
-    let v=1;
-    if(e.target.value.trim() !==""){
-    v=parseFloat(e.target.value.trim());
-    }
-    rightInput.value=Math.trunc((1/rate*v*100))/100;
-});
-
 async function changeCurrencies(){
     var getThis = `https://api.exchangerate.host/convert?from=${leftCurrency}&to=${rightCurrency}`;
     await fetch(getThis).then(response => response.json()).then((currency) => 
@@ -50,5 +40,24 @@ async function changeCurrencies(){
         liveCurrencyRate = currency.info.rate; 
     });
 }
-leftInput.addEventListener("change", getExchange);
-rightInput.addEventListener("change", getExchange);
+
+function correctFormat(event) {if(event.target.value == '0' && event.key != '.') event.target.value = event.target.value.replace('0', '');}
+function changeLeftInput(){
+    let valueWithoutSpaces = rightInput.value.replaceAll(' ', '');
+    rightInput.value = stringWithSpaces(rightInput.value);
+    let changedLeftValue = parseFloat((valueWithoutSpaces * 1/liveCurrencyRate).toFixed(4));    
+    
+    if(valueWithoutSpaces == '') changedLeftValue = '';
+    leftInput.value = stringWithSpaces(changedLeftValue);
+}
+
+function changeRightInput(){
+    let valueWithoutSpaces = leftInput.value.replaceAll(' ', '');
+    leftInput.value = stringWithSpaces(leftInput.value);
+    let changedRightValue = parseFloat((valueWithoutSpaces * liveCurrencyRate).toFixed(4));    
+    
+    if(valueWithoutSpaces == '') changedRightValue = '';
+    rightInput.value = stringWithSpaces(changedRightValue);
+}
+
+changeCurrencies();
