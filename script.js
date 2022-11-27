@@ -14,6 +14,11 @@ for(let i = 0; i < 4; i++){
     rightCurrencyButtons[i].addEventListener('click', changeSelectedButton)
 }
 
+leftInput.addEventListener('keydown', correctFormat);
+rightInput.addEventListener('keydown', correctFormat);
+leftInput.addEventListener('keyup', changeRightInput);
+rightInput.addEventListener('keyup', changeLeftInput);
+
 function changeSelectedButton(event){    
     event.target.style.backgroundColor = '#833AE0'; 
     event.target.style.color = 'white';
@@ -35,13 +40,25 @@ async function changeCurrencies(){
     var getThis = `https://api.exchangerate.host/convert?from=${leftCurrency}&to=${rightCurrency}`;
     await fetch(getThis).then(response => response.json()).then((currency) => 
     {
-        leftCurrencyInfo.innerHTML = 1 ${leftCurrency} = ${parseFloat(currency.info.rate.toFixed(4))} ${rightCurrency};
-        rightCurrencyInfo.innerHTML = 1 ${rightCurrency} = ${parseFloat((1 / currency.info.rate).toFixed(4))} ${leftCurrency};            
+        leftCurrencyInfo.innerHTML = `1 ${leftCurrency} = ${parseFloat(currency.info.rate.toFixed(4))} ${rightCurrency}`;
+        rightCurrencyInfo.innerHTML = `1 ${rightCurrency} = ${parseFloat((1 / currency.info.rate).toFixed(4))} ${leftCurrency}`;            
         liveCurrencyRate = currency.info.rate; 
     });
 }
 
-function correctFormat(event) {if(event.target.value == '0' && event.key != '.') event.target.value = event.target.value.replace('0', '');}
+function correctFormat(event) {
+    console.log(event.key);
+    console.log(event.which);
+    if(event.target.value == '0' && event.key != '.') 
+    event.target.value = event.target.value.replace('0', '');
+}
+
+function stringWithSpaces(x){
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");                     
+    return parts.join(".");
+}
+
 function changeLeftInput(){
     let valueWithoutSpaces = rightInput.value.replaceAll(' ', '');
     rightInput.value = stringWithSpaces(rightInput.value);
